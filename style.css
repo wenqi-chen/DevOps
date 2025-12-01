@@ -1,0 +1,49 @@
+/* Custom CSS for Dashboard Layout */
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scrollbar caused by fixed sidebar */
+    background-color: #f4f7f6; /* Light gray background for the overall page */
+}
+
+/* 1. Fixed Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px; /* Fixed width for the sidebar */
+    z-index: 1000; /* Ensure it stays on top */
+    transition: all 0.3s;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Customizing the active link in the sidebar */
+.sidebar .nav-link.active {
+    background-color: var(--bs-primary) !important; /* Use Bootstrap primary color */
+}
+
+/* 2. Main Content Adjustment */
+.main-content {
+    /* Push the main content to the right to clear the fixed sidebar */
+    margin-left: 250px; 
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+/* Make the sidebar collapse nicely on smaller screens (optional) */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* Make it stack on top on smaller screens */
+    }
+    .main-content {
+        margin-left: 0; /* Remove the margin on smaller screens */
+    }
+}
+
+/* Utility for card shadow and padding */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+}
